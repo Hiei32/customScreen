@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-//首页
+//主页面
 const Index = () => import('views/index/Index');
+const Home = () => import('views/index/Home');//首页
+const Cases = () => import('views/index/Cases');//案例
 
 //项目选择
 const Mgt = () => import('views/mgt/Mgt');
@@ -28,7 +30,21 @@ const routes = [
   },
   {
     path: '/Index',
-    component: Index
+    component: Index,
+    children: [
+      {
+        path: '',
+        redirect: '/Home'
+      },
+      {
+        path: '/Home',
+        component: Home
+      },
+      {
+        path: '/Cases',
+        component: Cases
+      },
+    ]
   },
   {
     path: '/Mgt',
