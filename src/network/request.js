@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const localURL = process.env.VUE_APP_URL;
 
-export function requestLocal (config) {
+export function request (config) {
   var at = localStorage.getItem('token');
   const instance = axios.create({
     baseURL: localURL,//接口地址

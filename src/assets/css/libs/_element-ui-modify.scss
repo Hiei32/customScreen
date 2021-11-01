@@ -1,0 +1,115 @@
+.el-button-group {
+  margin: 0 3px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn-sm-icon {
+  padding: 7px 10px;
+
+  i {
+    font-size: 16px;
+  }
+}
+
+.el-tree {
+
+  .tree-icon-btn {
+    margin-left: 5px;
+
+    a {
+      width      : 17px;
+      height     : 17px;
+      text-align : center;
+      line-height: 17px;
+      color      : $blue-a;
+      cursor     : pointer;
+
+      &:hover {
+        color: $blue-b;
+      }
+    }
+  }
+}
+
+.el-checkbox {
+  .el-checkbox__inner {
+    border-color: $white-2;
+    background  : $white-2;
+  }
+
+  .el-checkbox__label {
+    color: $white-8;
+  }
+}
+
+.dark {
+
+  .el-tree {
+    background: transparent;
+
+    .el-tree-node {
+      &:focus {
+        .el-tree-node__content {
+          background: transparent;
+        }
+      }
+
+      .el-tree-node__content {
+        &:hover {
+          background: $white-1;
+        }
+
+        .el-tree-node__label {
+          color: $white-8;
+        }
+      }
+    }
+  }
+
+  .el-input__inner {
+    border-color    : $white-1;
+    background-color: $white-1;
+    color           : $white-8;
+
+    &:hover {
+      border-color: $white-2;
+    }
+  }
+
+  .el-button {
+    background  : $white-1;
+    border-color: $white-1;
+
+    span {
+      color: $white-8;
+    }
+
+    &:hover {
+      border-color: $white-2;
+
+      span {
+        color: $white;
+      }
+    }
+  }
+}
+
+.icon-cut {
+  width       : 34px;
+  height      : 34px;
+  overflow    : hidden;
+  float       : left;
+  margin-right: 5px;
+
+  img {
+    width: 34px;
+    float: left;
+  }
+}

@@ -7,19 +7,6 @@ module.exports = {
     port: 8084, // 端口号
   },
   lintOnSave: true,
-  css: {
-    loaderOptions: {
-      postcss: {
-        plugins: [
-          require('postcss-pxtorem')({
-            rootValue: 16,
-            selectorBlackList: ['el'], // 忽略转换正则匹配项
-            propList: ['*'],
-          }),
-        ]
-      }
-    }
-  },
   chainWebpack: config => {
     config.resolve.alias
       .set("@$", resolve("src"))

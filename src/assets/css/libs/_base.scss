@@ -1,0 +1,726 @@
+*,
+*::before,
+*::after {
+  margin    : 0;
+  padding   : 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family                : 'SourceHanSans';
+  user-select                : none;
+  background                 : #111;
+  color                      : $white-9;
+  width                      : 100vw;
+  -webkit-tap-highlight-color: transparent;
+  overflow                   : hidden;
+  @include pos-ab(0, 0, 0, 0, 1);
+}
+
+.base {
+  width   : 100vw;
+  height  : 100vh;
+  overflow: hidden;
+  @include pos-ab(0, 0, 0, 0, 1);
+}
+
+a {
+  color          : $white-9;
+  text-decoration: none;
+}
+
+.clear-fix {
+  zoom: 1;
+
+  &::after {
+    content   : "";
+    width     : 0;
+    height    : 0;
+    clear     : both;
+    visibility: hidden;
+    display   : block;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.pd-0 {
+  padding: 0;
+}
+
+.pd-5 {
+  padding: 5px
+}
+
+.pd-10 {
+  padding: 10px
+}
+
+.pd-15 {
+  padding: 15px
+}
+
+.pd-20 {
+  padding: 20px
+}
+
+.pd-30 {
+  padding: 30px
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-5 {
+  margin-bottom: 5px !important;
+}
+
+.border {
+  width     : 100%;
+  height    : 1px;
+  border-top: 1px solid $black-1;
+}
+
+.nowrap {
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+}
+
+.frame-row {
+  width         : 100%;
+  min-height    : 100%;
+  position      : relative;
+  display       : flex;
+  flex-direction: row;
+  align-items   : stretch;
+
+  &.fixed {
+    height    : 100%;
+    min-height: unset;
+  }
+
+  &.nor {
+    height    : auto;
+    min-height: unset;
+
+    .frame-col {
+      background: transparent !important;
+    }
+  }
+
+  .frame-col {
+    width   : 1%;
+    flex    : 1;
+    position: relative;
+
+    &.fixed {
+      width     : 400px;
+      flex      : unset;
+      background: $black-05;
+    }
+  }
+}
+
+.frame-center {
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+}
+
+.scroll-x {
+  .el-scrollbar__wrap {
+    overflow-y: hidden;
+  }
+}
+
+.scroll-y {
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+}
+
+.insert-title {
+  width      : 100%;
+  font-size  : 19px;
+  line-height: 20px;
+  color      : $blue-a;
+  font-weight: bold;
+  margin     : 20px 0 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.insert,
+.insert-list {
+  width         : 100%;
+  display       : flex;
+  margin-bottom : 10px;
+  flex-direction: row;
+
+  .attr {
+    min-width  : 100px;
+    text-align : right;
+    line-height: 20px;
+    padding    : 10px;
+    word-break : break-all;
+    font-size  : 14px;
+
+    &.star {
+      &:before {
+        content     : "*";
+        color       : $red-a;
+        margin-right: 3px;
+        font-size   : 18px;
+        height      : 20px;
+      }
+    }
+
+    &.colon {
+      padding-right: 20px;
+
+      &:after {
+        content     : "：";
+        float       : right;
+        width       : 16px;
+        margin-right: -16px;
+      }
+    }
+  }
+
+  .val {
+    width: 1%;
+    flex : 1;
+
+    .word {
+      font-size  : 14px;
+      line-height: 20px;
+      padding    : 10px 0;
+      word-break : break-all;
+      display    : inline-block;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.insert-list {
+  margin       : 0;
+  border-bottom: 1px solid #eee;
+
+  .attr {
+    text-align : left;
+    font-weight: bold;
+    color      : #222;
+  }
+
+  .val {
+    .word {
+      width      : 100%;
+      text-align : left;
+      padding    : 10px;
+      line-height: 20px;
+      color      : #222;
+      word-break : break-all;
+    }
+  }
+}
+
+.val-img {
+  width : 64px;
+  height: 64px;
+  border: 1px solid #ddd;
+  @include centered;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    max-width : 54px;
+    max-height: 54px;
+  }
+}
+
+.operate {
+  width         : 300px;
+  height        : 100%;
+  background    : #fff;
+  display       : flex;
+  flex-direction: column;
+  position      : relative;
+  overflow      : visible;
+
+  .opt-header {
+    border-bottom : 1px solid #eee;
+    padding       : 15px;
+    flex-direction: row;
+    display       : flex;
+
+    .title {
+      width        : 1%;
+      height       : 32px;
+      flex         : 1;
+      line-height  : 32px;
+      font-size    : 17px;
+      font-weight  : bold;
+      white-space  : nowrap;
+      overflow     : hidden;
+      text-overflow: ellipsis;
+      color        : #333;
+    }
+
+    .close-common {
+      width : 24px;
+      height: 24px;
+    }
+  }
+
+  .opt-content {
+    width   : 100%;
+    height  : 1%;
+    flex    : 1;
+    position: relative;
+
+    .el-scrollbar {
+      height: 100%;
+    }
+
+    .opt-title {
+      width      : 100%;
+      height     : 30px;
+      line-height: 30px;
+      padding    : 0 14px;
+      font-size  : 14px;
+      color      : #666;
+      background : rgba(0, 0, 0, .05);
+      cursor     : pointer;
+      font-weight: bold;
+      margin-top : 1px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, .1);
+      }
+
+      &.active {
+        color: #222;
+
+        i {
+          @include rotate(0);
+          transition: all .2s linear;
+        }
+      }
+
+      i {
+        width   : 30px;
+        height  : 30px;
+        position: relative;
+        float   : left;
+        @include rotate(-90deg);
+        transition: all .2s linear;
+        margin    : 0 0 0 -10px;
+
+        &:before,
+        &:after {
+          content   : "";
+          width     : 8px;
+          height    : 2px;
+          background: #999;
+          position  : absolute;
+          top       : 50%;
+          left      : 50%;
+          margin    : -1px -4px;
+        }
+
+        &:before {
+          @include rotate(45deg);
+          margin-left: -7.5px;
+        }
+
+        &:after {
+          @include rotate(-45deg);
+          margin-left: -2.5px;
+        }
+      }
+
+      .btn {
+        width : 20px;
+        height: 20px;
+        @include centered;
+        cursor: pointer;
+        float : right;
+        border: 1px solid $black-1;
+        @include rounded();
+        font-size  : 13px;
+        color      : $black-3;
+        margin     : 5px -2px;
+        font-weight: bold;
+
+        &:hover {
+          border-color: $black-2;
+          color       : $black-5;
+          background  : $black-05;
+        }
+
+        &:active {
+          color     : $black;
+          background: $black-2;
+        }
+      }
+    }
+
+    .opt-body {
+      width  : 100%;
+      padding: 0 3px;
+      border : 1px solid rgba(0, 0, 0, .05);
+
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+
+    .opt-line {
+      width         : 100%;
+      display       : flex;
+      flex-direction: row;
+      margin        : 3px 0;
+      padding       : 0 10px;
+
+      b {
+        min-width  : 70px;
+        white-space: nowrap;
+        font-size  : 14px;
+        font-weight: normal;
+        height     : 28px;
+        line-height: 28px;
+      }
+
+      .extend {
+        width         : 1%;
+        flex          : 1;
+        display       : flex;
+        flex-direction: column;
+      }
+
+      .word {
+        white-space: normal;
+        height     : 28px;
+        line-height: 28px;
+        color      : #bbb;
+        font-size  : 14px;
+      }
+    }
+
+    .opt-block {
+      width : 100%;
+      border: 1px dashed $black-05;
+      @include rounded(4px);
+      display       : flex;
+      flex-direction: row;
+      padding       : 5px;
+      cursor        : pointer;
+      margin        : 3px 0;
+
+      &:hover {
+        background  : $black-05;
+        border-color: $black-1;
+      }
+
+      .icon {
+        width : 20px;
+        height: 20px;
+        margin: 0 4px;
+      }
+
+      span {
+        width        : 1%;
+        flex         : 1;
+        line-height  : 20px;
+        white-space  : nowrap;
+        text-overflow: ellipsis;
+        font-size    : 14px;
+        overflow     : hidden;
+      }
+
+      .checkbox {
+        margin: -2px -4px -2px 0;
+      }
+
+    }
+  }
+
+  .operate-detail {
+    width         : 300px;
+    height        : 100%;
+    position      : absolute;
+    left          : 300px;
+    top           : 0;
+    background    : #fdfdfd;
+    z-index       : 1;
+    display       : flex;
+    flex-direction: column;
+    box-shadow    : 5px 0 10px #f4f4f4 inset;
+
+    .opt-header {
+      border-bottom: 0;
+    }
+
+    .el-scrollbar {
+      height: 100%;
+    }
+
+    .opt-content {
+
+
+      .title-small {
+        width      : 100%;
+        line-height: 20px;
+        font-size  : 15px;
+        color      : $blue-a;
+        padding    : 0 15px;
+        font-weight: bold;
+        margin     : 20px 0 5px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .opt-line {
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+.close-common {
+  width   : 40px;
+  height  : 40px;
+  position: relative;
+  cursor  : pointer;
+
+  &:hover {
+
+    &:before,
+    &:after {
+      background: #999;
+    }
+  }
+
+  &:active {
+
+    &:before,
+    &:after {
+      background: #666;
+    }
+  }
+
+  &:before,
+  &:after {
+    content       : "";
+    width         : 14px;
+    height        : 2px;
+    margin        : -1px -7px;
+    background    : #bbb;
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    pointer-events: none;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.folder {
+  width : 20px;
+  height: 20px;
+  @include centered;
+  transition: all .2s linear;
+  cursor    : pointer;
+
+  &:before {
+    content      : "";
+    width        : 0;
+    height       : 0;
+    border-bottom: 8px solid #000;
+    border-left  : 8px solid transparent;
+    display      : none;
+  }
+
+  &.folder-open {
+    @include rotate(0);
+
+    &:before {
+      display: block;
+    }
+  }
+
+  &.folder-close {
+    @include rotate(-45deg);
+
+    &:before {
+      display            : block;
+      border-bottom-color: #999;
+    }
+  }
+}
+
+.bemap-return {
+  height     : 50px;
+  line-height: 50px;
+  @include pos-ab(20px, auto, auto, 20px, 100);
+  @include rounded(8px);
+  padding   : 0 20px;
+  font-size : 20px;
+  background: rgba(20, 20, 20, .5);
+  border    : 1px solid $white-2;
+  color     : $white-7;
+  cursor    : pointer;
+  transition: all .1s linear;
+
+  &:hover {
+    color       : $white-9;
+    background  : rgba(20, 20, 20, 0.9);
+    border-color: $white-1;
+    transition  : all .1s linear;
+  }
+
+  i {
+    font-style: normal;
+    color     : inherit;
+  }
+}
+
+.bemap-tree {
+  width: 300px;
+  @include pos-ab(80px, auto, 20px, 20px, 80);
+  @include rounded(8px);
+  border    : 1px solid $white-2;
+  background: rgba(20, 20, 20, 0.5);
+  transition: all .1s linear;
+
+  &:hover,
+  &:focus {
+    background  : rgba(20, 20, 20, 0.9);
+    border-color: $white-1;
+    transition  : all .1s linear;
+  }
+
+  h1 {
+    float      : left;
+    padding    : 10px;
+    line-height: 28px;
+    color      : $white;
+    font-size  : 18px;
+    margin     : 0;
+  }
+
+  .border {
+    width     : 100%;
+    height    : 1px;
+    background: $white-2;
+    float     : left;
+  }
+
+  .content {
+    width   : 100%;
+    height  : 100%;
+    float   : left;
+    overflow: hidden;
+    position: relative;
+    height  : calc(100% - 50px);
+
+    .tree-area {
+      min-width: 100%;
+      float    : left;
+      padding  : 5px;
+    }
+  }
+}
+
+.be-backdrop {
+  line-height: 20px;
+  padding    : 5px 10px;
+  @include pos-ab(auto, 0, 0, auto, 100);
+  @include rounded(8px 0 0 0);
+  display       : none;
+  pointer-events: none;
+  color         : $white-8;
+  background    : rgba(20, 20, 20, .5);
+  font-size     : 14px;
+  display       : none !important;
+
+  span {
+    color       : $blue-b;
+    margin-right: 20px;
+    line-height : inherit;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.frame {
+  width    : 1400px;
+  max-width: 100%;
+}
+
+.body {
+  width     : 100%;
+  min-height: calc(100vh - 46px);
+}
+
+@media (min-width:1400px) {
+  .frame {
+    width: 1200px;
+  }
+}
+
+@media (max-width:980px) {
+  .frame {
+    width: 960px;
+  }
+}

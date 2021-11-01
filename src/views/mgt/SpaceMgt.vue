@@ -1,12 +1,12 @@
 <template>
-  <div>login</div>
+  <div>SpaceMgt</div>
 </template>
 
 <script>
 export default {
-  name: 'Login'
+  name: 'SpaceMgt'
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
