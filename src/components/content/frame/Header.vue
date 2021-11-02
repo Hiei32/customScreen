@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Login from 'components/content/frame/Login'
+import Login from 'components/content/frame/login/Login'
 import Navi from 'components/content/frame/Navi'
 
 export default {

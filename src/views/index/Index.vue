@@ -4,6 +4,7 @@
     <div class="index">
       <el-scrollbar ref="scrollbar">
         <router-view></router-view>
+        <frame-footer></frame-footer>
       </el-scrollbar>
     </div>
   </div>
@@ -11,11 +12,13 @@
 
 <script>
 import FrameHeader from 'components/content/frame/Header'
+import FrameFooter from 'components/content/frame/Footer'
 
 export default {
   name: 'Index',
   components: {
     FrameHeader,
+    FrameFooter,
   },
   data () {
     return {
@@ -45,9 +48,5 @@ export default {
   width: 100vw;
   height: 100vh;
   background: #fafafa;
-
-  .index-scroll {
-    width: 100vw;
-  }
 }
 </style>

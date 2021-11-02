@@ -11,7 +11,8 @@ export default {
 <style lang="scss" scoped>
 .case-area {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: #111;
+  padding-bottom: 128px;
 }
 </style>

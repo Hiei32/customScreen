@@ -1,39 +1,37 @@
 <template>
-  <div>
-    <div class="index-scroll">
-      <swiper :slides-per-view="3"
-              :space-between="50"
-              :option="swiperOption"
-              @swiper="onSwiper"
-              @slideChange="onSlideChange">
-        <swiper-slide>
-          <img src="~assets/images/swiper/swiper01.jpg"
-               alt=""
-               style="width:100vw;height:100vh">
-        </swiper-slide>
-        <swiper-slide>
-          <img src="~assets/images/swiper/swiper02.jpg"
-               alt=""
-               style="width:100vw;height:100vh">
-        </swiper-slide>
-      </swiper>
-
-      <div class="frame">
-        123123
-        1<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      </div>
+  <div class="index-scroll">
+    <swiper :slides-per-view="3"
+            :space-between="50"
+            :option="swiperOption"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange">
+      <swiper-slide>
+        <img src="~assets/images/swiper/swiper01.jpg"
+             alt=""
+             style="width:100vw;height:100vh">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="~assets/images/swiper/swiper02.jpg"
+             alt=""
+             style="width:100vw;height:100vh">
+      </swiper-slide>
+    </swiper>
+    <div class="frame">
+      <version-intro></version-intro>
     </div>
   </div>
 </template>
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import VersionIntro from './ChildComps/VersionIntro.vue'
 
 export default {
   name: "Home",
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    VersionIntro,
   },
   data () {
     return {
@@ -61,4 +59,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.index-scroll {
+  width: 100%;
+  float: left;
+}
 </style>

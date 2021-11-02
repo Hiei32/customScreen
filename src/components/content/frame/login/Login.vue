@@ -1,15 +1,37 @@
 <template>
   <div class="login">
     <div class="login-btn"
-         @click="$router.push('Mgt')">登录</div>
+         @click="loginOpen()">登录</div>
     <div class="resgister-btn"
          @click="$router.push('Reg')">注册</div>
+    <teleport to="body">
+      <login-window @loginClose="loginClose"
+                    v-if="isLogin"></login-window>
+    </teleport>
   </div>
 </template>
 
 <script>
+import LoginWindow from './childComps/LoginWindow.vue'
+
 export default {
-  name: "Login"
+  name: "Login",
+  components: {
+    LoginWindow
+  },
+  data () {
+    return {
+      isLogin: false,
+    }
+  },
+  methods: {
+    loginOpen () {
+      this.isLogin = true;
+    },
+    loginClose () {
+      this.isLogin = false;
+    }
+  }
 }
 </script>
 
