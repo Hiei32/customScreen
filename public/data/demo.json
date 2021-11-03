@@ -1,0 +1,65 @@
+{
+  "name": "王小明",
+  "account": "be2",
+  "mail": "123456789@qq.com",
+  "tel": "13579246810",
+  "password": "qq123456",
+  "projects": [
+    {
+      "name": "第一个测试项目",
+      "screen": {
+        "name": "测试项目",
+        "screenWidth": 1920,
+        "screenHeight": 1080,
+        "scale": 1,
+        "components": [
+          {
+            "name": "文本组件",
+            "icon": "iconfont-text",
+            "type": "text",
+            "style": {
+              "w": 300,
+              "h": 150,
+              "l": 10,
+              "t": 10,
+              "z": 10
+            },
+            "options": {
+              "data": "文本内容",
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": 200,
+              "fontStyle": "normal",
+              "textAlign": "center"
+            }
+          },
+          {
+            "name": "饼图组件",
+            "icon": "iconfont-pie",
+            "type": "chart-pie",
+            "style": {
+              "w": 500,
+              "h": 100,
+              "l": 780,
+              "t": 600,
+              "z": 10
+            },
+            "options": {
+              "data": [
+                1,
+                2,
+                3
+              ],
+              "color": [
+                "#fff",
+                "#eee",
+                "#ddd"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "space": []
+}

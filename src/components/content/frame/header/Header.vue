@@ -19,7 +19,7 @@
 
 <script>
 import Login from 'components/content/frame/login/Login'
-import Navi from 'components/content/frame/Navi'
+import Navi from 'components/content/frame/header/Navi'
 
 export default {
   name: 'Header',
@@ -49,7 +49,6 @@ export default {
 
       .system {
         img {
-          width: 42px;
           height: 42px;
         }
 
@@ -87,7 +86,6 @@ export default {
       margin-right: 0;
 
       img {
-        width: 50px;
         height: 50px;
         margin-right: 12px;
         transition: all 0.2s linear;

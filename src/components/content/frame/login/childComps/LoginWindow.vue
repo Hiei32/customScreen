@@ -1,7 +1,6 @@
 <template>
   <div class="login-window">
-    <div class="shadow"
-         @click="loginClose()"></div>
+    <div class="shadow"></div>
     <div class="login-frame">
       <h1>用户登录</h1>
       <div class="login-input">
@@ -54,10 +53,14 @@
         当前版本：<span>V1.0</span>
       </div>
     </div>
+    <div class="login-close"
+         @click="loginClose()"></div>
   </div>
 </template>
 
 <script>
+import { getDemo } from 'network/getData';
+
 export default {
   name: "LoginWindow",
   data () {
@@ -66,7 +69,8 @@ export default {
       form: {
         account: "",
         password: ""
-      }
+      },
+      user: {}
     }
   },
   methods: {
@@ -76,10 +80,14 @@ export default {
     login () {
       let self = this;
       self.isLoading = true;
-      setTimeout(() => {
-        self.loginClose();
-        self.$router.push('Mgt');
-      }, 400)
+      getDemo().then((res) => {
+        let user = { "name": res.name, "head": res.head }
+        this.$store.commit('login', user);
+        setTimeout(() => {
+          self.loginClose();
+          self.$router.push('Mgt');
+        }, 400)
+      })
     }
   }
 }
@@ -99,6 +107,7 @@ $blue-hover: rgb(0, 180, 255);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   .shadow {
     width: 100%;
@@ -119,6 +128,7 @@ $blue-hover: rgb(0, 180, 255);
     padding: 42px 64px 72px;
     border-radius: 24px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 24px;
 
     h1 {
       width: 100%;
@@ -233,6 +243,48 @@ $blue-hover: rgb(0, 180, 255);
         &:hover {
           color: $blue;
         }
+      }
+    }
+  }
+
+  .login-close {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.1s linear;
+
+    &:before,
+    &:after {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: #aaa;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -1px -10px;
+      transition: all 0.1s linear;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      border-color: #eee;
+
+      &:before,
+      &:after {
+        background: #eee;
       }
     }
   }

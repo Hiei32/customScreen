@@ -18,6 +18,31 @@
     </swiper>
     <div class="frame">
       <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
+      <version-intro></version-intro>
     </div>
   </div>
 </template>

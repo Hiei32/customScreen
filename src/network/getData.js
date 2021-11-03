@@ -5,3 +5,9 @@ export function getComps () {
     url: 'data/screen.json'
   })
 }
+
+export function getDemo () {
+  return request({
+    url: 'data/demo.json'
+  })
+}

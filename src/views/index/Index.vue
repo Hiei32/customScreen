@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import FrameHeader from 'components/content/frame/Header'
-import FrameFooter from 'components/content/frame/Footer'
+import FrameHeader from 'components/content/frame/header/Header'
+import FrameFooter from 'components/content/frame/footer/Footer'
 
 export default {
   name: 'Index',

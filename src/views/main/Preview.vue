@@ -5,7 +5,7 @@
         <tool-nav></tool-nav>
       </template>
     </frame-header>
-    <frame-body>
+    <frame>
       <template #body-left>
         <layers :comps="screen.components"></layers>
       </template>
@@ -16,13 +16,13 @@
       <template #body-right>
         <config></config>
       </template>
-    </frame-body>
+    </frame>
   </div>
 </template>
 
 <script>
-import FrameHeader from 'components/content/frame/Header';
-import FrameBody from 'components/content/frame/Body';
+import FrameHeader from 'components/content/platform/header/Header';
+import Frame from 'components/content/platform/frame/Frame';
 import ToolNav from 'components/content/tools/ToolNav';
 import Layers from 'components/content/tools/layers/Layers';
 import Stage from 'components/content/tools/stage/Stage';
@@ -33,7 +33,7 @@ export default {
   name: 'Preview',
   components: {
     FrameHeader,
-    FrameBody,
+    Frame,
     ToolNav,
     Layers,
     Stage,

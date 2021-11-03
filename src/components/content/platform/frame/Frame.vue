@@ -1,13 +1,13 @@
 <template>
   <div class="body">
     <div class="body-col">
-      <slot name="body-left"></slot>
+      <slot name="left"></slot>
     </div>
     <div class="body-col fix">
-      <slot name="body-center"></slot>
+      <slot name="center"></slot>
     </div>
     <div class="body-col">
-      <slot name="body-right"></slot>
+      <slot name="right"></slot>
     </div>
   </div>
 </template>
