@@ -9,13 +9,12 @@
            v-for="(n,i) in navi"
            :key="i"
            @click="pageChange(i)"
-           :class="{'active':currentIndex==i}">{{n.name}}</div>
+           :class="{'active':currentIndex==i}"><i :class="n.icon"></i>{{n.name}}</div>
     </div>
     <frame>
       <template #center>
         <el-scrollbar>
           <router-view></router-view>
-          1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
         </el-scrollbar>
       </template>
     </frame>
@@ -37,13 +36,16 @@ export default {
       currentIndex: 0,
       navi: [{
         name: "项目管理",
-        path: "ProjectsMgt"
+        path: "ProjectsMgt",
+        icon: "icomoon-list"
       }, {
         name: "空间管理",
-        path: "SpaceMgt"
+        path: "SpaceMgt",
+        icon: "icomoon-codepen"
       }, {
         name: "大屏市场",
-        path: "Market"
+        path: "Market",
+        icon: "icomoon-display"
       }]
     }
   },
@@ -85,13 +87,70 @@ export default {
   height: 60px;
 
   .mgt-navi {
-    padding: 0 40px;
+    padding: 0 100px;
     height: inherit;
     float: left;
     color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    margin-left: -50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.1s linear;
+
+    &:before,
+    &:after {
+      content: "";
+      height: 60px;
+      width: 50%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      background-image: url("~assets/images/frame/mgt-navi.png");
+      background-repeat: no-repeat;
+      background-position-x: -400%;
+      transition: all 0.2s linear;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    &:hover {
+      color: #fff;
+    }
 
     &.active {
       color: #fff;
+      z-index: 5;
+
+      &:before,
+      &:after {
+        background-position-x: 0;
+      }
+    }
+
+    i {
+      width: 24px;
+      height: 24px;
+      color: inherit;
+      font-size: 18px;
+      font-style: normal;
+      margin-right: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
     }
   }
 }
