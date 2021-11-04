@@ -11,13 +11,9 @@
            @click="pageChange(i)"
            :class="{'active':currentIndex==i}"><i :class="n.icon"></i>{{n.name}}</div>
     </div>
-    <frame>
-      <template #center>
-        <el-scrollbar>
-          <router-view></router-view>
-        </el-scrollbar>
-      </template>
-    </frame>
+    <div class="mgt-body">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -153,5 +149,11 @@ export default {
       pointer-events: none;
     }
   }
+}
+
+.mgt-body {
+  width: 100%;
+  height: 1%;
+  flex: 1;
 }
 </style>

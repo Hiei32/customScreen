@@ -8,6 +8,7 @@ const Cases = () => import('views/index/Cases');//案例
 //项目选择
 const Mgt = () => import('views/mgt/Mgt');
 const ProjectsMgt = () => import('views/mgt/projectsMgt/ProjectsMgt');//项目管理
+const ProjectsAdd = () => import('views/mgt/projectsMgt/ProjectsAdd');//新增项目
 const SpaceMgt = () => import('views/mgt/SpaceMgt');//空间管理
 const Market = () => import('views/mgt/Market');//大屏市场
 
@@ -57,6 +58,10 @@ const routes = [
       {
         path: 'ProjectsMgt',
         component: ProjectsMgt
+      },
+      {
+        path: 'ProjectsAdd',
+        component: ProjectsAdd
       },
       {
         path: 'SpaceMgt',

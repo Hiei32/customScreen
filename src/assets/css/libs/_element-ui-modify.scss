@@ -45,12 +45,27 @@
   }
 
   .el-checkbox__label {
-    color: $white-8;
+    color: $white-8 !important;
   }
 }
 
+.icon-cut {
+  width       : 34px;
+  height      : 34px;
+  overflow    : hidden;
+  float       : left;
+  margin-right: 5px;
+
+  img {
+    width: 34px;
+    float: left;
+  }
+}
+
+// 暗色风格
 .dark {
 
+  // 树
   .el-tree {
     background: transparent;
 
@@ -73,17 +88,30 @@
     }
   }
 
-  .el-input__inner {
+  // 文本框
+  .el-input__inner,
+  .el-textarea__inner {
     border-color    : $white-1;
     background-color: $white-1;
     color           : $white-8;
+    font-family     : inherit;
 
     &:hover {
       border-color: $white-2;
     }
   }
 
-  .el-button {
+  .is-disabled {
+    .el-input__inner {
+      border-color    : $white-1;
+      background-color: $white-1;
+      color           : $white-8;
+      font-family     : inherit;
+    }
+  }
+
+  // 按钮
+  .el-button--default {
     background  : $white-1;
     border-color: $white-1;
 
@@ -98,18 +126,34 @@
         color: $white;
       }
     }
+
+    &:active {
+      background: $white-05;
+    }
   }
-}
 
-.icon-cut {
-  width       : 34px;
-  height      : 34px;
-  overflow    : hidden;
-  float       : left;
-  margin-right: 5px;
+  //select
 
-  img {
-    width: 34px;
-    float: left;
+  // 面包屑
+  .el-breadcrumb__inner {
+    color: $white-8;
+
+    &.is-link {
+      color: $white-6;
+
+      &:hover {
+        color: $blue-b;
+      }
+    }
+  }
+
+  //标签页
+  .el-radio-button__inner {
+    border-color: rgba(255, 255, 255, .2) !important;
+  }
+
+  //分割线
+  .el-divider {
+    background: $white-2;
   }
 }

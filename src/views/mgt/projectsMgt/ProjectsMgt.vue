@@ -1,30 +1,33 @@
 <template>
-  <div>
-    <div class="projects-list">
-      <div class="line">
-        <div class="project-content">
-          <div class="project-add">
-            <img src="~assets/images/icons/layout.svg"
-                 alt="icon">
-            新建项目
-          </div>
-        </div>
-      </div>
-      <div class="project-content"
-           v-for="(n,i) in projectList"
-           :key="i">
-        <div class="project">
-          <div class="project-img">
-            <div class="project-img-frame">
-              <img :src="n.pic"
-                   alt="">
+  <div class="projects-mgt">
+    <el-scrollbar>
+      <div class="projects-list">
+        <div class="line">
+          <div class="project-content">
+            <div class="project-add"
+                 @click="ProjectAdd()">
+              <img src="~assets/images/icons/layout.svg"
+                   alt="icon">
+              新建项目
             </div>
           </div>
-          <span>{{n.name}}</span>
+        </div>
+        <div class="project-content"
+             v-for="(n,i) in projectList"
+             :key="i">
+          <div class="project"
+               @click="projectDetail(n)">
+            <div class="project-img">
+              <div class="project-img-frame">
+                <img :src="n.pic"
+                     alt="">
+              </div>
+            </div>
+            <span>{{n.name}}</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="space"></div>
+    </el-scrollbar>
   </div>
 </template>
 
@@ -86,20 +89,27 @@ export default {
         pic: require('assets/images/demo/project.jpg')
       }]
     }
+  },
+  methods: {
+    ProjectAdd () {
+      this.$router.push('/Mgt/projectsAdd')
+    },
+    projectDetail (proj) {
+      this.$router.push('/Main')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.space {
+.projects-mgt {
   width: 100%;
-  height: 100px;
-  float: left;
+  height: 100%;
 }
 
 .projects-list {
   width: 100%;
-  padding: 16px 32px;
+  padding: 16px 16px;
   float: left;
 
   .line {
@@ -111,7 +121,7 @@ export default {
 .project-content {
   width: 20%;
   float: left;
-  padding: 24px;
+  padding: 16px;
 
   .project,
   .project-add {
@@ -119,10 +129,10 @@ export default {
     float: left;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.04);
-    border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.1s linear;
+    border-radius: 8px;
 
     &:hover {
       border-color: rgba(30, 170, 255, 0.8);
@@ -177,7 +187,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 18px;
     padding: 16px;
     color: rgba(255, 255, 255, 0.5);
 
@@ -190,8 +200,8 @@ export default {
     }
 
     img {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
       margin-right: 24px;
       opacity: 0.6;
       transition: all 0.1s linear;

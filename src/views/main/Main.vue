@@ -1,6 +1,12 @@
 <template>
   <div>
-    详情页
+    <div class="frame">
+      <frame-header>
+        <template #header-tool>
+          <tool-nav></tool-nav>
+        </template>
+      </frame-header>
+    </div>
     <el-row>
       <el-button @click="$router.push('Preview')">预览</el-button>
       <el-button @click="$router.push('OperationLog')">操作日志</el-button>
@@ -13,7 +19,9 @@
       <el-button @click="$router.push('Setting')">设置</el-button>
       <el-button @click="$router.replace('/Mgt')">返回</el-button>
     </el-row>
-    <router-view></router-view>
+    <router-view>
+
+    </router-view>
   </div>
 </template>
 

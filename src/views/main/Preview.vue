@@ -1,23 +1,16 @@
 <template>
-  <div class="frame">
-    <frame-header>
-      <template #header-tool>
-        <tool-nav></tool-nav>
-      </template>
-    </frame-header>
-    <frame>
-      <template #body-left>
-        <layers :comps="screen.components"></layers>
-      </template>
-      <template #body-center>
-        <stage :comps="screen.components"
-               @changeStyle="changeStyle"></stage>
-      </template>
-      <template #body-right>
-        <config></config>
-      </template>
-    </frame>
-  </div>
+  <frame>
+    <template #body-left>
+      <layers :comps="screen.components"></layers>
+    </template>
+    <template #body-center>
+      <stage :comps="screen.components"
+             @changeStyle="changeStyle"></stage>
+    </template>
+    <template #body-right>
+      <config></config>
+    </template>
+  </frame>
 </template>
 
 <script>
