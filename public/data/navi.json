@@ -1,0 +1,57 @@
+{
+  "name": "项目菜单",
+  "list": [
+    {
+      "name": "项目概况",
+      "icon": "icomoon-display",
+      "children": [
+        {
+          "name": "预览",
+          "path": "Preview"
+        },
+        {
+          "name": "操作日志",
+          "path": "OperationLog"
+        },
+        {
+          "name": "版本",
+          "path": "Versions"
+        }
+      ]
+    },
+    {
+      "name": "数据管理",
+      "icon": "icomoon-database",
+      "children": [
+        {
+          "name": "数据源",
+          "path": "DataSource"
+        },
+        {
+          "name": "数据整合",
+          "path": "DataIntegration"
+        }
+      ]
+    },
+    {
+      "name": "全局变量",
+      "icon": "icomoon-text-color",
+      "path": "GlobalVariable"
+    },
+    {
+      "name": "成员管理",
+      "icon": "icomoon-users",
+      "path": "MemberMgt"
+    },
+    {
+      "name": "设置",
+      "icon": "icomoon-cog",
+      "path": "Setting"
+    },
+    {
+      "name": "返回",
+      "icon": "icomoon-undo2",
+      "path": "/Mgt"
+    }
+  ]
+}

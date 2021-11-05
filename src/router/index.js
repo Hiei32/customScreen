@@ -14,7 +14,7 @@ const Market = () => import('views/mgt/Market');//大屏市场
 
 //主面板
 const Main = () => import('views/main/Main');
-const Preview = () => import('views/main/Preview');//预览
+const Preview = () => import('views/main/preview/Preview');//预览
 const OperationLog = () => import('views/main/OperationLog');//操作日志
 const Versions = () => import('views/main/Versions');//版本
 const DataSource = () => import('views/main/DataSource');//数据源

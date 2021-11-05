@@ -1,33 +1,33 @@
 <template>
   <div>
-    <div class="frame">
-      <frame-header>
-        <template #header-tool>
-          <tool-nav></tool-nav>
-        </template>
-      </frame-header>
-    </div>
-    <el-row>
-      <el-button @click="$router.push('Preview')">预览</el-button>
-      <el-button @click="$router.push('OperationLog')">操作日志</el-button>
-      <el-button @click="$router.push('Versions')">版本</el-button>
-      <el-button @click="$router.push('DataSource')">数据源</el-button>
-      <el-button @click="$router.push('DataIntegration')">数据整合</el-button>
-      <el-button @click="$router.push('GlobalVariable')">全局变量</el-button>
-      <el-button @click="$router.push('SharingMgt')">分享管理</el-button>
-      <el-button @click="$router.push('MemberMgt')">成员管理</el-button>
-      <el-button @click="$router.push('Setting')">设置</el-button>
-      <el-button @click="$router.replace('/Mgt')">返回</el-button>
-    </el-row>
-    <router-view>
-
-    </router-view>
+    <frame-header>
+      <template #header-tool>
+        <tool-nav></tool-nav>
+      </template>
+    </frame-header>
+    <frame>
+      <template #left>
+        <navi></navi>
+      </template>
+      <template #center>
+        <router-view></router-view>
+      </template>
+    </frame>
   </div>
 </template>
 
 <script>
+import FrameHeader from 'components/content/platform/header/Header'
+import Frame from 'components/content/platform/frame/Frame'
+import Navi from 'components/content/platform/navi/Navi'
+
 export default {
-  name: 'Main'
+  name: 'Main',
+  components: {
+    FrameHeader,
+    Frame,
+    Navi,
+  }
 }
 </script>
 
